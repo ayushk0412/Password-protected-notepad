@@ -63,38 +63,7 @@ add(loginP);
          String confirm = new String(passC.getPassword());
          if(pass.equals(confirm))
          {
-             try {
-                 BufferedReader input = new BufferedReader(new FileReader("passwords.txt"));
-                 String line = input.readLine();
-                 while(line != null)
-                 {
-                     StringTokenizer st = new StringTokenizer(line);
-                     if(userTF.getText().equals(st.nextToken()))
-                     {
-                         System.out.println("User already exists.");
-                         return;
-                     }
-                     line = input.readLine();
-                     
-                 }
-                 input.close();
-                 MessageDigest md = MessageDigest.getInstance("SHA-256"); //hashing start hoga
-                 md.update(pass.getBytes());
-                 byte byteData[]=md.digest();
-                 StringBuffer sb = new StringBuffer(); //hex format change
-                 for(int i =0; i < byteData.length; i++)
-                    sb.append(Integer.toString((byteData[i] & 0xFF) + 0x100, 16).substring(1));
-                 BufferedWriter output = new BufferedWriter(new FileWriter("passwords.txt", true)); // store kar dega database me
-                 output.write(userTF.getText()+" "+sb.toString()+"\n");
-                 output.close();
-             Login login = (Login) getParent();
-             login.cl.show(login, "login");
-             } catch (FileNotFoundException ex) {
-                 ex.printStackTrace();
-             } catch (IOException ex) {
-                 ex.printStackTrace();
-             } catch (NoSuchAlgorithmException ex) {
-                 ex.printStackTrace();
+              //TO GET THE FULL CODE, SEND ME A MAIL AT ayushk0412@gmail.com, WITH THE SUBJECT "CODE REQUIRED"
              }
          }
          }
